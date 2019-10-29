@@ -2,7 +2,7 @@ import React from 'react';
 
 import axios from "axios";
 
-// import UserCardList from './components/UserCardList';
+import UserCardList from './components/UserCardList';
 import './App.css';
 
 //this component will fetch data for me and render UserCardList
@@ -46,7 +46,7 @@ class App extends React.Component {
           
         </div>
       </div>
-      {/* <UserCardList/> */}
+      <UserCardList/>
       </>
   );
   }
