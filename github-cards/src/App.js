@@ -1,26 +1,56 @@
 import React from 'react';
-import logo from './logo.svg';
+
+import axios from "axios";
+
+// import UserCardList from './components/UserCardList';
 import './App.css';
 
-function App() {
+//this component will fetch data for me and render UserCardList
+
+class App extends React.Component {
+  
+  state={
+    myCard: {}
+  };
+  componentDidMount() {
+    axios.get('https://api.github.com/users/Chrismis79')
+    .then(res => {
+      console.log("This is res:", res.data);
+      this.setState({
+        myCard: res.data
+       
+      });
+  
+    })
+    .catch(error => alert("There was a problem fetching requested data", error));
+  }
+  render() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <header className="header">
+      
+      <p>Christine's Github User Card and Followers<span role="img" aria-label="red heart">❤️</span></p>
+     
+    </header>
+  
+      <div className="card">
+    
+        <div className="card-info">
+          <h2>{this.state.myCard.name}</h2>
+          <img src={this.state.myCard.avatar_url} alt="Christine"/> 
+          
+          <p>Username: {this.state.myCard.login}</p>
+          <p>Location: {this.state.myCard.location}</p>
+          <p>Followers: {this.state.myCard.followers}</p>
+          <p>Following: {this.state.myCard.following}</p>
+          
+        </div>
+      </div>
+      {/* <UserCardList/> */}
+      </>
   );
+  }
 }
 
 export default App;
+
