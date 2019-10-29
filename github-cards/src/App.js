@@ -26,28 +26,29 @@ class App extends React.Component {
   }
   render() {
   return (
-    <>
+    <div className="container">
     <header className="header">
       
-      <p>Christine's Github User Card and Followers<span role="img" aria-label="red heart">❤️</span></p>
+      <p><span role="img" aria-label="red heart">❤️</span>Christine's Github User Card and Followers<span role="img" aria-label="red heart">❤️</span></p>
      
     </header>
   
-      <div className="card">
+      <div className="myCard">
     
-        <div className="card-info">
-          <h2>{this.state.myCard.name}</h2>
+        
+         
           <img src={this.state.myCard.avatar_url} alt="Christine"/> 
+          <h2>{this.state.myCard.name}</h2>
           
+        <div className="cardInfo">
           <p>Username: {this.state.myCard.login}</p>
           <p>Location: {this.state.myCard.location}</p>
           <p>Followers: {this.state.myCard.followers}</p>
           <p>Following: {this.state.myCard.following}</p>
-          
-        </div>
+        </div> 
       </div>
       <UserCardList/>
-      </>
+      </div>
   );
   }
 }

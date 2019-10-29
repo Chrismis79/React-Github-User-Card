@@ -1,6 +1,7 @@
 import React from 'react';
 
 import axios from 'axios';
+import './UserCard.css'
 
 //this component needs to fetch data from API
 
@@ -26,21 +27,22 @@ class UserCardList extends React.Component {
       return(
         <>
         <button onClick={this.fetchFollowers}>See Followers</button>
-    
-         <div className="card">    
-          <div className="card-info">
-            {this.state.followers.map(follower => (
-              <>
-              <h2>{follower.name}</h2>
-              <img src={follower.avatar_url} alt="Christine's Followers"/>
-              <p>Username: {follower.login}</p>
-              <p>Location: {follower.location}</p>
+        <div className='wrapper'>    
+        {this.state.followers.map(follower => (
+            
+          <div className="card">
+            <h2>{follower.name}</h2>
+            <img src={follower.avatar_url} alt="Christine's Followers"/>
+            
+            <div className="cardtext">
+              <p>Username: {follower.login}</p>                
               <p>Followers: <a href={follower.followers_url}>Followers</a></p>
               <p>Following: <a href={follower.following_url}>Following</a></p>
-              </>
+            </div>
+        </div>
               ))}
-      </div> 
-     </div>
+       
+      </div>
      </>
       )
     }
