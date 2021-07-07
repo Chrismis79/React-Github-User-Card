@@ -1,0 +1,49 @@
+.App {
+  text-align: center;
+  font-size: 62.5%;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+header {
+  text-align: center;
+  font-size: 3rem;
+  font-family: 'Ubuntu', sans-serif;
+  background: rgb(93,236,126);
+    background: linear-gradient(90deg, rgba(93,236,126,1) 0%, rgba(35,207,231,1) 50%, rgba(255,0,0,1) 100%);
+}
+h2 {
+  margin-top: 2%;
+  font-family: 'Ubuntu', sans-serif;
+  text-align: center;
+}
+
+.myCard {
+  width: 60%;
+  padding: 2%;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 0 1px 6px -2px #000;
+  background-color: #FFF;
+  margin-bottom: 30px;
+}
+
+.myCard img {
+  width: 200px;
+  
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+.cardInfo{
+  border: 3px solid gray;
+  border-radius: 5px;
+  padding: 1%;
+  font-size: 1.6rem;
+}
+
+
+
+
